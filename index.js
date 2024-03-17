@@ -10,6 +10,11 @@ const cas = new CAS({
   //host: 'cas-server:8080', 'protocol': 'http'
 });
 
+app.use(session({
+  secret: 'ca2b63f6e8d7e35fa057d9dcfe6f4c2c4c0e68cf8df07dd33979621b19eeb6b9',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.use((req, res, next) => {
   cas.authenticate(req, res, (err, status, username, extended) => {
@@ -38,8 +43,6 @@ app.get('/logout', cas.logout);
 
 // Start the server
 const port = 443;
-//const ip = '29-143.pool.cnw.net';
-////'cas-server:4000';
 app.listen(port, () => {
-  console.log(`Server running`);
+  console.log(`Server running on port ${port}`);
 });
