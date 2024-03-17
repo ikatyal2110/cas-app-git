@@ -38,8 +38,8 @@ app.get('/logout', cas.logout);
 
 // Start the server
 const port = 443;
-const ip = '29-143.pool.cnw.net';
+//const ip = '29-143.pool.cnw.net';
 ////'cas-server:4000';
-app.listen(port, ip, () => {
-  console.log(`Server running on http://${ip}:${port}`);
+app.listen(port, () => {
+  console.log(`Server running`);
 });
