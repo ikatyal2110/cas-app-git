@@ -12,6 +12,6 @@
   "dependencies": {
     "express": "^4.18.3",
     "express-session": "*",
-    "cas": "*"
+    "cas": "https://github.com/kcbanner/node-cas"
   }
 }
