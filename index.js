@@ -34,13 +34,13 @@ app.use((req, res, next) => {
   });
 });
 
+// Define a route for logout
+app.get('/logout', cas.logout);
+
 // Define a route for the home page
 app.get('/', (req, res) => {
   res.send(`Hello, ${req.session.cas && req.session.cas.user}! <a href="/logout">Logout</a>`);
 });
-
-// Define a route for logout
-app.get('/logout', cas.logout);
 
 // Start the server
 const port = 443;
