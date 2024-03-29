@@ -39,7 +39,7 @@ app.get('/logout', cas.logout);
 
 // Define a route for the home page
 app.get('/', (req, res) => {
-  res.send(`Hello, ${req.session.cas && req.session.cas.user}! <a href="/logout">Logout</a>`);
+  res.send(`Hello, ${req.session.cas && req.session.cas.name}! <a href="/logout">Logout</a>`);
 });
 
 // Start the server
