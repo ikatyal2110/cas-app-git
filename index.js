@@ -35,9 +35,7 @@ app.use((req, res, next) => {
 });
 
 // Define a route for logout
-app.get('/logout', (req, res) =>{
-  res.send(cas.logout)
-});
+app.get('/logout', cas.logout);
 
 // Define a route for the home page
 app.get('/', (req, res) => {
