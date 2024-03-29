@@ -39,6 +39,7 @@ app.get('/logout', cas.logout);
 
 // Define a route for the home page
 app.get('/', (req, res) => {
+  console.log(req.session.cas.attributes)
   res.send(`Hello, ${req.session.cas && req.session.cas.user}! <a href="/logout">Logout</a>`);
 });
 
